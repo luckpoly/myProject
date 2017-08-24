@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/submit/submit",
+    "pages/login/login",
+    "pages/orderlist/orderlist",
+    "pages/orderdetail/orderdetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "backgroundColor": "#fff",
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/submit/submit",
+        "text": "申请",
+        "iconPath": "images/icon/send.png",
+        "selectedIconPath": "images/icon/send_on.png"
+      },
+      {
+        "pagePath": "pages/orderlist/orderlist",
+        "text": "订单",
+        "iconPath": "images/icon/menu.png",
+        "selectedIconPath": "images/icon/menu_on.png"
+      }
+    ]
+  }
+}

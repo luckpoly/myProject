@@ -1,0 +1,17 @@
+<!--login.wxml-->
+<form bindsubmit="formSubmit" >
+  <view class="flex-wrp" >
+    <view class="section__title">手机号</view>
+    <input class="phone" name="Mobile" placeholder="手机号" />
+  </view>
+    <view class="flex-wrp gh" >
+    <view class="section__title">工　号</view>
+    <input class="phone" name="Number" placeholder="工号" />
+  </view>
+
+   <view class="btn-submit">
+    <button formType="submit">提交</button>
+    <modal title="温馨提示" no-cancel hidden="{{confirmHidden}}" confirm-text="确定"  bindconfirm="modalChange">{{promat}}</modal>
+  </view>
+  
+</form>

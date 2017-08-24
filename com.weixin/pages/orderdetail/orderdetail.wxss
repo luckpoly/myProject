@@ -1,0 +1,71 @@
+/* orderdetail.wxss */
+.all{
+  color: #333333;
+}
+.head {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0px ;
+  background: #f0f0f0;
+}
+.head-left{
+  margin-left: 10px;
+}
+.head-right {
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+  color: red;
+}
+
+.orderid-name {
+ color: #aaa;
+}
+
+.money-name {
+ color: #aaa;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.store-name {
+  color: #aaa;
+}
+.store{
+   font-weight: bold;
+}
+
+.money {
+  color: red;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.body{
+ background: #f0f0f0;
+ padding: 10px;
+ margin-top: 10px;
+}
+.line{
+  height: 1px;
+  width: 100%;
+  background-color: #aaa;
+  margin-top: 5px;
+}
+.info{
+   font-weight: bold;
+   margin-top: 10px;
+}
+.paytype{
+  display: flex;
+  margin-bottom: 10px;
+}
+.showimg{
+  margin-right: 5px;
+}
+
+.btn-delete{
+  margin: 20px 15px;
+}
+

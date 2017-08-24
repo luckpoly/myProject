@@ -1,0 +1,78 @@
+/* orderllist.wxss */
+
+.warp {
+  height: 100%;
+  display: fiex;
+  flex-direction: column;
+  padding: 20rpx;
+}
+
+navigator {
+  overflow: hidden;
+}
+
+.list {
+  position: relative;
+  margin: 10px;
+  background-color: #f0f0f0;
+   border-radius:5px;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  border-radius:5px;
+  margin: 10px;
+}
+.item-left{
+  width: 70%;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 30%;
+}
+
+.money {
+  color: red;
+}
+
+.state {
+  margin-top: 10px;
+}
+.name{
+  margin-top: 10px;
+}
+.date {
+  font-size: 16px;
+  margin-top: 10px;
+}
+.match-filter {
+  padding: 20rpx 0;
+  top: 0;
+  width: 100%;
+  color: black;
+  background-color: #f0f0f0;
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  flex-direction: row;
+}
+.match-filter view {
+  display: block;
+  float: left;
+  width: 33%;
+  align-items: center;
+}
+.sl-list{
+  margin-top: 45px;
+}
+.btn-t{
+  color: #23bbff;
+}
+.btn-f{
+  color: black;
+}
