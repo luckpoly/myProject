@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:gravity="center">
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/iv_msglist_title"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/no_read_message"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_weight="4">
+        <TextView
+            android:id="@+id/tv_dingdan_titlemsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:textSize="18sp"
+            android:textColor="@color/deep_text_color"
+            android:text="订单消息"/>
+        <TextView
+            android:id="@+id/tv_msgtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016/05/07 8:00"
+            android:layout_alignTop="@+id/tv_dingdan_titlemsg"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <TextView
+            android:id="@+id/tv_msgcontent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="你的订单已被张三三接受，如有疑问请联系站三三OK，，，，，，"
+            android:layout_below="@+id/tv_dingdan_titlemsg"
+            android:layout_alignParentLeft="true"
+            android:textSize="15sp"
+            android:maxEms="11"
+            android:layout_marginTop="7dp"
+
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="0.4"
+        android:src="@mipmap/icon_go_right"/>
+
+</LinearLayout>

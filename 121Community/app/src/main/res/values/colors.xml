@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--主题色-->
+    <color name="theme_color">#38aaff</color>
+    <color name="title_line_color">#37b0ff</color>
+    <color name="bg">#ffffff</color>
+    <color name="tab_menu_bg">#fafafa</color>
+
+    <!--线的颜色-->
+    <color name="line">#e1e1e1</color>
+
+    <!--背景颜色-->
+    <color name="bg_theme">#EFEFF4</color>
+
+    <!--列表条目触摸和默认颜色-->
+    <color name="press">#eeeeee</color>
+    <color name="noPress">#fafafa</color>
+
+    <!--文字颜色-->
+    <color name="text_color">#000000</color>
+    <color name="deep_text_color">#323232</color>
+    <color name="shallow_text_color">#646464</color>
+    <color name="hint_text_color">#a0a0a0</color>
+
+    <!--选择分类nav背景色-->
+    <color name="category_nav_bg_selected">#ffffff</color>
+    <color name="category_nav_bg_normal">#f5f5f5</color>
+    <color name="transparent">#00000000</color>
+    <!--验证码按钮颜色-->
+    <color name="login_select_lan">#009eda</color>
+    <color name="login_noselect_hui">#8a8a8a</color>
+    
+    <!-- 社区颜色-->
+    <color name="cm_bg_hui">#f3f6f6</color>
+    <color name="title_text_color">#2c2b2c</color>
+    <color name="textColor_shenhei">#474747</color>
+    <color name="textColor_activity_title">#3b3b3b</color>
+    <color name="textColor_activity_in">#686868</color>
+
+
+
+
+
+</resources>

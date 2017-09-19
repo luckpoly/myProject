@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cm_bg_hui"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <include layout="@layout/oto_titlebase_layout" />
+
+    <TextView style="@style/lineStyle" />
+
+    <EditText
+        android:id="@+id/et_commit"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginBottom="22dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/bg"
+        android:gravity="top|left"
+        android:hint="请输入您的意见反馈"
+        android:padding="10dp"
+        android:textColor="@color/login_noselect_hui"
+        android:textSize="15dp" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <Button
+            android:id="@+id/bt_commit"
+            android:layout_width="165dp"
+            android:layout_height="33dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="56dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/loginbt_yaunjiaolan"
+            android:gravity="center"
+            android:text="提交"
+            android:textColor="@color/bg"
+            android:textSize="15sp" />
+    </RelativeLayout>
+</LinearLayout>

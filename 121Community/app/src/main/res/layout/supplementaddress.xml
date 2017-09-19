@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cm_bg_hui"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/base_title_bar_view"
+         />
+    <TextView
+       style="@style/lineStyle" />
+    <RelativeLayout
+        android:background="@color/bg"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        >
+        <EditText
+            android:id="@+id/et_supplement"
+            android:layout_marginLeft="20dp"
+            android:hint="请补充小区号，楼号，门牌号~"
+            android:textColor="@color/hint_text_color"
+            android:textSize="18dp"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_phone_title"
+        android:background="@color/bg"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        >
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_marginLeft="20dp"
+            android:hint="请输入手机号~"
+            android:textColor="@color/hint_text_color"
+            android:textSize="18dp"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+    <Button
+        android:background="@drawable/gv_item_bg"
+        android:id="@+id/bt_sure"
+        android:text="确定"
+        android:textSize="20dp"
+        android:textColor="@color/bg"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="110dp"
+        android:layout_marginRight="110dp"
+        android:layout_height="44dp" />
+
+</LinearLayout>

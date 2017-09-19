@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+    <com.goodfood86.tiaoshi.order121Project.widget.CircleImageView
+        android:id="@+id/iv_avatar"
+        android:src="@mipmap/user_icon_group"
+        android:layout_width="47dp"
+        android:layout_height="47dp" />
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:layout_marginTop="3dp"
+        android:text="18300709012"
+        />
+
+</LinearLayout>

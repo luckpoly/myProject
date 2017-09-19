@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cm_bg_hui"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/base_title_bar_view" />
+    <GridView
+        android:id="@+id/gv_choose_city"
+        android:numColumns="2"
+        android:listSelector="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="match_parent"></GridView>
+
+</LinearLayout>

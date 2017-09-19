@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="120dp"
+    android:layout_height="120dp">
+    <com.goodfood86.tiaoshi.order121Project.widget.CircleImageView
+        android:layout_marginTop="15dp"
+        android:id="@+id/iv_huodong_icon"
+        android:src="@mipmap/belle"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"/>
+    <TextView
+        android:id="@+id/tv_main_name"
+        android:layout_width="95dp"
+        android:layout_height="46dp"
+        android:layout_centerInParent="true"
+        android:textSize="12sp"
+        android:maxLines="2"
+        android:gravity="center"
+        android:background="@mipmap/gy_jieli_bg"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/bg"
+        android:text=""
+        android:ellipsize="end"/>
+</RelativeLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/cm_bg_hui"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/base_title_bar_view"
+        />
+    <TextView
+       style="@style/lineStyle"/>
+    <RadioGroup
+        android:id="@+id/rg_aboutus"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:padding="1dp"
+        android:background="@drawable/rg_biankuang"
+        android:layout_height="40dp">
+        <RadioButton
+            android:checked="true"
+            android:gravity="center"
+            android:id="@+id/rb1"
+            android:layout_width="0dp"
+            android:background="@drawable/radio_press"
+            android:text="全部预约"
+            android:textColor="@drawable/textpress"
+            android:button="@null"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+        <RadioButton
+            android:gravity="center"
+            android:id="@+id/rb2"
+            android:layout_width="0dp"
+            android:text="预约中"
+            android:background="@drawable/radio_press"
+            android:textColor="@drawable/textpress"
+            android:button="@null"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+        <RadioButton
+            android:gravity="center"
+            android:id="@+id/rb3"
+            android:text="已预约"
+            android:layout_width="0dp"
+            android:textColor="@drawable/textpress"
+            android:background="@drawable/radio_press"
+            android:button="@null"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+        <RadioButton
+            android:gravity="center"
+            android:id="@+id/rb4"
+            android:text="已失效"
+            android:layout_width="0dp"
+            android:textColor="@drawable/textpress"
+            android:background="@drawable/radio_press"
+            android:button="@null"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+    </RadioGroup>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+         />
+
+</LinearLayout>

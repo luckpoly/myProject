@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/ll_login_title"
+        layout="@layout/title_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+            android:gravity="center_vertical"
+
+        android:background="@android:color/white">
+    <TextView
+        android:id="@+id/tv_msgdatatitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="18sp"
+        android:textColor="@color/deep_text_color"
+    android:layout_marginLeft="25dp"
+    android:text="订单消息"/>
+        <TextView
+            android:id="@+id/tv_msgdata_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="23dp"
+            android:text="2016/05/07"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_msgdata_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingLeft="25dp"
+        android:paddingRight="23dp"
+       android:paddingBottom="10dp"
+        android:lineSpacingExtra="10dp"
+        android:textSize="15sp"
+        android:text="你的订单已被配送员张三三接受，联系电话：122222222222，张三三会在最短时间内联系您取货，如果有任何问题请联系配送员张三三"/>
+
+
+</LinearLayout>

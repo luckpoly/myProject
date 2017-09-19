@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/base_title_bar_view"/>
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/activity_PTRListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="0dp"
+        android:divider="@color/transparent"
+        ptr:ptrAnimationStyle="flip"
+        />
+
+</LinearLayout>

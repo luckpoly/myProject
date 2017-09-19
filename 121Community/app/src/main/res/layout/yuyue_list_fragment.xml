@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/all_order_PTRListView"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="match_parent"
+            android:divider="@color/transparent"
+            ptr:ptrAnimationStyle="flip"
+            />
+        <LinearLayout
+            android:id="@+id/ll_yuyue_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/canjia_activity"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#878788"
+                android:layout_marginTop="20dp"
+                android:textSize="15sp"
+                android:text="您暂时还没有相关预约哦～"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

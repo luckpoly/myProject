@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.0"
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.goodfood86.tiaoshi.order121Project"
+        multiDexEnabled true
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 10
+        versionName "1.5.2"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:design:23.2.1'
+    compile project(':ConvenientBanner')
+    compile project(':PagerSlidingTabStrip')
+    compile project(':PullToRefreshListViewLibrary')
+    compile project(':Rong_Cloud_Android_IMKit_SDK_v2_7_1_dev')
+    //json解析库
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile files('libs/libammsdk.jar')
+    compile files('libs/alipaySdk-20160223.jar')
+    compile files('libs/jpush-android-2.1.3.jar')
+    compile files('libs/umeng-analytics-v5.6.7.jar')
+    compile files('libs/greendao-1.3.7.jar')
+    compile files('libs/qiniu-android-sdk-7.2.0.jar')
+    compile files('libs/xUtils-2.6.14.jar')
+    //图片选择有关
+    compile 'com.android.support:recyclerview-v7:23.3.0'
+    compile 'cn.finalteam:galleryfinal:1.4.8.7'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    //okhttp网络请求库
+    compile 'com.squareup.okio:okio:1.9.0'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    //联动选择的第三方库
+    compile 'com.bigkoo:pickerview:2.1.1'
+    //自动更新涉及的第三方库
+    compile 'io.reactivex:rxjava:1.1.5'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'io.reactivex:rxandroid:1.2.0'
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+}

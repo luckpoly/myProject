@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Day07.iml" filepath="$PROJECT_DIR$/../Day07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../app/app.iml" filepath="$PROJECT_DIR$/../app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library.iml" filepath="$PROJECT_DIR$/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mycarmerdemo2/mycarmerdemo2.iml" filepath="$PROJECT_DIR$/../mycarmerdemo2/mycarmerdemo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mypulltorefreshdemo/mypulltorefreshdemo.iml" filepath="$PROJECT_DIR$/../mypulltorefreshdemo/mypulltorefreshdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mysurfaceviewcamera/mysurfaceviewcamera.iml" filepath="$PROJECT_DIR$/../mysurfaceviewcamera/mysurfaceviewcamera.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../myxlistview/myxlistview.iml" filepath="$PROJECT_DIR$/../myxlistview/myxlistview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../picturedemo/picturedemo.iml" filepath="$PROJECT_DIR$/../picturedemo/picturedemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../slidelibrary/slidelibrary.iml" filepath="$PROJECT_DIR$/../slidelibrary/slidelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../surfaceviewmediaplayer/surfaceviewmediaplayer.iml" filepath="$PROJECT_DIR$/../surfaceviewmediaplayer/surfaceviewmediaplayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../takepicfromcamera/takepicfromcamera.iml" filepath="$PROJECT_DIR$/../takepicfromcamera/takepicfromcamera.iml" />
+    </modules>
+  </component>
+</project>

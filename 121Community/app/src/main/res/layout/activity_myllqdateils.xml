@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/bg"
+    android:layout_height="match_parent">
+    <include layout="@layout/oto_titlebase_layout"/>
+    <TextView
+       style="@style/lineStyle" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <com.goodfood86.tiaoshi.order121Project.widget.MyActivityScrollview
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <ImageView
+        android:id="@+id/iv_titleimg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@mipmap/llq_item_bg"
+        android:scaleType="centerCrop"/>
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#3c3c3c"
+            android:layout_margin="10dp"
+            android:text=""/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_peopleNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#3c3c3c"
+            android:text=""/>
+        <TextView
+            android:id="@+id/tv_mainpeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textSize="12sp"
+            android:textColor="#3c3c3c"
+            android:text="组织人：张明"/>
+    </RelativeLayout>
+
+    <TextView
+       android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:background="@color/cm_bg_hui"/>
+        <TextView
+            android:id="@+id/tv_canyurenyuan"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textSize="16sp"
+            android:textColor="#3a3a3a"
+            android:text="活动参与人员"/>
+        <TextView
+            android:id="@+id/tv_line"
+           style="@style/lineStyle"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_people_head"
+            android:layout_width="match_parent"
+           android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cm_bg_hui" />
+    </LinearLayout>
+    </com.goodfood86.tiaoshi.order121Project.widget.MyActivityScrollview>
+    </RelativeLayout>
+</LinearLayout>

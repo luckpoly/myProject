@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/cm_bg_hui"
+    android:layout_height="match_parent">
+    <include layout="@layout/oto_titlebase_layout"/>
+    <TextView
+      style="@style/lineStyle" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/fabu_activity"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#878788"
+                android:layout_marginTop="20dp"
+                android:textSize="15sp"
+                android:text="您暂时还没有参加活动哦～"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_canjia_activity"
+        android:layout_width="165dp"
+        android:layout_height="33dp"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:background="@drawable/loginbt_yaunjiaolan"
+        android:textColor="@color/bg"
+        android:layout_marginBottom="56dp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        android:text="参加活动"/>
+
+</LinearLayout>

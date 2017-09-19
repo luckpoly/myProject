@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/nav_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:textColor="@color/text_color"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:layout_marginLeft="10dp"
+        android:id="@+id/nav_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:scaleType="center"
+        android:src="@mipmap/back"
+        android:visibility="gone"
+
+         />
+
+    <TextView
+        android:id="@+id/nav_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="#2c2b2c"
+        android:textSize="18sp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_right"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/nav_title">
+
+        <ImageView
+            android:id="@+id/nav_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:scaleType="center"
+            android:visibility="gone" />
+        <TextView
+            android:id="@+id/nav_right_text"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toLeftOf="@+id/nav_right"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textColor="@color/text_color"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</RelativeLayout>
