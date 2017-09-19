@@ -5,14 +5,16 @@
       <view class="orderid-name">订单编号：</view>
       <view class="money-name">金额：</view>
       <view class="store-name">申请类型：</view>
+      <view  class="detail-name">详情：</view>
     </view>
     <view class="head-centre">
       <view class="orderid">{{applicationNO}}</view>
-      <view class="money">{{account}}</view>
+      <view class="money">￥{{account}}</view>
       <view class="store">
         <view wx:if="{{applyType == 1 }}" class="state">财富端</view>
         <view wx:if="{{applyType == 2 }}" class="state">营销端</view>
       </view>
+      <view class="datail">{{description||''}}</view>
     </view>
     <view class="head-right">
       <view wx:if="{{approvalStatus == 1 }}" class="state">申请中</view>
@@ -24,18 +26,22 @@
     <view class="info title">客户信息</view>
     <view class="line"></view>
     <view class="info name">姓名：{{name}}</view>
-    <view class="info idno">身份证号：{{IDNO}}</view>
+    <view class="info idno">手机号：{{mobile}}</view>
     <view class="info paytype" >支付方式：
       <view wx:if="{{payType == 1 }}" class="payType">POS机支付</view>
-      <view wx:if="{{payType == 2 }}" class="payType">其他方式</view>
+      <view wx:if="{{payType == 2 }}" class="payType">居间人转账</view>
+      <view wx:if="{{payType == 3 }}" class="payType">金账户支付 </view>
+      <view wx:if="{{payType == 4 }}" class="payType">其他方式</view>
     </view>
 
     <view>
-      <image class="showimg" style="width: 100px; height: 100px; background-color: #eeeeee;" wx:for="{{listAttac}}" wx:key="FilePath" src="http://172.16.10.40:9001{{item.FilePath}}" data-index="{{index}}" bindtap="previewImage"></image>
+      <image class="showimg" style="width: 100px; height: 100px; background-color: #eeeeee;" wx:for="{{listAttac}}" wx:key="FilePath" src="https://sp.mufax.cn/{{item.FilePath}}" data-index="{{index}}" bindtap="previewImage"></image>
     </view>
   </view>
 
-  <view class="btn-delete">
-    <button bindtap="btn_delete">删除</button>
-  </view>
+    <view wx:if="{{approvalStatus == 2 }}" class="btn_delete_hidden"></view>
+    <view wx:if="{{approvalStatus != 2 }}" class="btn-delete">
+        <button bindtap="btn_delete">删除</button>
+    </view>
+
 </view>

@@ -7,6 +7,7 @@ Page({
    */
   data: {
     confirmHidden: true,
+    loadHidden:true,
     promat: ''
   },
   //提交表单  登录
@@ -18,20 +19,23 @@ Page({
       that.setData({ promat: "手机号和工号不能为空!", confirmHidden: false })
       return false
     }
+    that.setData({
+      loadHidden: false,
+    })
     console.log(formData),
       wx.getStorage({
         key: 'openid',
         success: function (res) {
           formData.OpenID = res.data
-          console.log(res.data)
-          console.log(formData)
           wx.request({
             url: app.url + 'user/Register',
-            // url: 'http://172.16.100.156:8011/api/user/Register',
             method: 'POST',
             header: { 'Content-type': 'application/json' },
             data: formData,
             success: function (res) {
+              that.setData({
+                loadHidden: true,
+              })
               console.log("-----", res.data)
               if (!res.data) {
                 that.setData({ promat: '服务器异常！', confirmHidden: false })

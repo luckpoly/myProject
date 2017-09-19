@@ -1,64 +1,82 @@
 <!--submit.wxml-->
-<form bindsubmit="formSubmit" >
+<form bindsubmit="formSubmit">
   <!-- <scroll-view class="svfrom"> -->
-    <view class="head">
-      <image class="headimg" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <view class="head-r">
-        <view class="head-r-1">
-          <text class="name">{{name}}</text>
-          <view class="post">{{positiontype}}</view>
-        </view>
-        <view class="jobno">工号:{{mynumber}}</view>
-        <view class="store">所属门店：{{depname}}</view>
+  <view class="head">
+    <image class="headimg" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <view class="head-r">
+      <view class="head-r-1">
+        <text class="name">{{name}}</text>
+        <view class="post">{{positiontype}}</view>
+      </view>
+      <view class="jobno">工号:{{mynumber}}</view>
+      <view class="store">所属门店：{{depname}}</view>
+    </view>
+  </view>
+  <view class="body">
+    <view class="flex-wrp">
+      <view class="section__title">姓名：</view>
+      <input class="phone" maxlength="10" name="Name" value="{{redata}}" />
+    </view>
+    <view class="line"></view>
+    <view class="flex-wrp">
+      <view class="section__title">手机号：</view>
+      <input class="phone" maxlength="18" type="idcard" name="Mobile" value="{{redata}}" />
+    </view>
+    <view class="line"></view>
+    <view class="flex-wrp">
+      <view class="section__title">金额：</view>
+      <input class="phone" maxlength="18" type="digit" name="Account" value="{{redata}}" />
+    </view>
+    <view class="line"></view>
+    <view class="flex-wrp">
+      <view class="section__title">备注：</view>
+      <input class="phone" name="Description" placeholder="选填" value="{{redata}}" />
+    </view>
+    <view class="line"></view>
+    <view class="flex-wrp">
+      <view class="section__title">申请类型：</view>
+      <view class="classname">
+        <radio-group bindchange="applicationType">
+          <label class="select"><radio  color="#23bbff" value="1" checked="true"/>财富端</label>
+          <label class="select"><radio color="#23bbff" value="2"/>营销端</label>
+        </radio-group>
       </view>
     </view>
-    <view class="body">
-      <view class="flex-wrp">
-        <view class="section__title">姓名：</view>
-        <input class="phone" name="Name" value="{{redata}}"/>
-      </view>
-      <view class="line"></view>
-      <view class="flex-wrp">
-        <view class="section__title">身份证号：</view>
-        <input class="phone" name="IDNO" value="{{redata}}" />
-      </view>
-      <view class="line"></view>
-      <view class="flex-wrp">
-        <view class="section__title">金额：</view>
-        <input class="phone" name="Account" value="{{redata}}" />
-      </view>
-      <view class="line"></view>
-      <view class="flex-wrp">
-        <view class="section__title">申请类型：</view>
-        <view class="classname">
-          <radio-group bindchange="applicationType">
-            <label class="select" ><radio  color="#23bbff" value="1" checked="true"/>财富端</label>
-            <label class="select"><radio color="#23bbff" value="2"/>营销端</label>
-          </radio-group>
-        </view>
-      </view>
-      <view class="line"></view>
-      <view class="flex-wrp">
-        <view class="section__title">支付方式：</view>
-        <view class="classname">
-          <radio-group bindchange="payType">
-            <label class="select"><radio color="#23bbff" value="1" checked="true"/>POS支付</label>
-            <label class="select"><radio color="#23bbff" value="2"/>其它</label>
-          </radio-group>
-        </view>
-      </view>
-      <view>
-        <image class="{{showView?'img-show':'img-hide'}}" style="width: 90px; height: 90px; background-color: #eeeeee;" wx:for="{{pictures}}" wx:key="unique" src="{{item}}" data-index="{{index}}" bindtap="seleteimg"></image>
-      </view>
-    </view>
-    <view class="btn-submit">
-      <button class="btn-submit-btn"  formType="submit">提交</button>
-    </view>
+    <view class="line"></view>
 
- <modal title="温馨提示" no-cancel hidden="{{confirmHidden}}" confirm-text="确定"  bindconfirm="modalChange">{{promat}}</modal>
-    <loading hidden="{{loadHidden}}" bindchange="loadChange">
-      {{loadingtext}}
-    </loading>
+
+    <view class="flex-wrp pt">
+      <view class="section__title">支付方式：</view>
+      <picker value="{{area}}" range="{{array}}" bindchange="bindPickrChange">
+        <view class="picker">
+          {{array[area]}}
+        </view>
+      </picker>
+    </view>
+    <view class="flex-wrp paytype">
+
+      <view class="classname">
+        <view class="section__title">支付方式：</view>
+        <radio-group bindchange="payType">
+          <label class="select"><radio color="#23bbff" value="1" checked="true"/>POS支付</label>
+          <label class="select"><radio color="#23bbff" value="2"/>居间人转账</label>
+          <label class="select"><radio color="#23bbff" value="3"/>金账户支付</label>
+          <label class="select"><radio color="#23bbff" value="4"/>其它支付</label>
+        </radio-group>
+      </view>
+    </view>
+    <view>
+      <image class="{{showView?'img-show':'img-hide'}}" style="width: 90px; height: 90px; background-color: #eeeeee;" wx:for="{{pictures}}" wx:key="unique" src="{{item}}" data-index="{{index}}" bindtap="seleteimg"></image>
+    </view>
+  </view>
+  <view class="btn-submit">
+    <button class="btn-submit-btn" formType="submit">提交</button>
+  </view>
+
+  <modal title="温馨提示" no-cancel hidden="{{confirmHidden}}" confirm-text="确定" bindconfirm="modalChange">{{promat}}</modal>
+  <loading hidden="{{loadHidden}}" bindchange="loadChange">
+    {{loadingtext}}
+  </loading>
 
 
   <!-- </scroll-view> -->

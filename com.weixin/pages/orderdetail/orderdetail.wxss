@@ -21,6 +21,7 @@
 
 .orderid-name {
  color: #aaa;
+ white-space: pre;
 }
 
 .money-name {
@@ -31,10 +32,21 @@
 
 .store-name {
   color: #aaa;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+.detail-name{
+  color: #aaa;
+}
+.datail{
+  font-weight: bold;
+  margin-top: 10px;
+  margin-right: 7px;
+}
+
 .store{
    font-weight: bold;
-}
+} 
 
 .money {
   color: red;
@@ -64,8 +76,11 @@
 .showimg{
   margin-right: 5px;
 }
-
+.btn_delete_hidden{
+  display: none
+}
 .btn-delete{
   margin: 20px 15px;
 }
+
 

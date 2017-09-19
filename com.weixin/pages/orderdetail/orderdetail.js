@@ -7,18 +7,19 @@ Page({
    */
   data: {
     pictures: [],
-    newlist:{},
-    name:"",
-    IDNO:"",
+    newlist: {},
+    name: "",
+    mobile: "",
     account: "",
     applyTime: "",
     approvalStatus: "",
-    listAttac:[],
+    listAttac: [],
     payType: "",
     orderId: "",
-    applyType:"",
-    applicationNO:"",
-    loadHidden: true
+    applyType: "",
+    applicationNO: "",
+    loadHidden: true,
+    description:""
   },
   previewImage: function (e) {
     var that = this,
@@ -41,28 +42,27 @@ Page({
           loadHidden: false
         })
         if (res.confirm) {
-          console.log('用户点击确定', that.data.orderId )
+          console.log('用户点击确定', that.data.orderId)
           wx.request({
-            // url: 'http://172.16.100.156:8011/api/Application/DelApplication',
             url: app.url + 'Application/DelApplication',
             method: 'POST',
-            data: { id: that.data.orderId, SysUserID: app.globalData.SysUserID},
+            data: { id: that.data.orderId, SysUserID: app.globalData.SysUserID },
             header: { 'Content-type': 'application/json' },
             success: function (res) {
               var deleteState = ''
               if (res.data.code == 'y') {
-                  deleteState = '删除成功'
-                  //获取页面栈
-                  var pages = getCurrentPages();
-                  if (pages.length > 1) {
-                    //上一个页面实例对象
-                    var prePage = pages[pages.length - 2];
-                    //关键在这里
-                    prePage.onPullDownRefresh()
-                  }
-                  wx.navigateBack(); 
-              }else{
-                  deleteState = '删除失败'
+                deleteState = '删除成功'
+                //获取页面栈
+                var pages = getCurrentPages();
+                if (pages.length > 1) {
+                  //上一个页面实例对象
+                  var prePage = pages[pages.length - 2];
+                  //关键在这里
+                  prePage.onPullDownRefresh()
+                }
+                wx.navigateBack();
+              } else {
+                deleteState = '删除失败'
               }
               wx.showToast({
                 title: deleteState,
@@ -76,7 +76,7 @@ Page({
                 })
             }
           })
-          
+
         } else {
           console.log('用户点击取消')
         }
@@ -87,35 +87,35 @@ Page({
     this.setData({
       loadHidden: false
     })
-    console.log('asdfasdforder=',this.data.orderId)
     var that = this
     wx.request({
       url: app.url + 'Application/GetApplicationDetail',
-      // url: 'http://172.16.100.156:8011/api/Application/GetApplicationDetail',
-
-      data: { id: that.data.orderId},
+      data: { id: that.data.orderId },
       header: { 'Content-type': 'application/json' },
       success: function (res) {
         if (!res.data) {
           return false
         }
-        console.log('详细信息：' ,res.data),
-        that.setData({ 
-          newList: res.data, 
-          loadHidden: true,
-          name:res.data.name,
-          IDNO: res.data.IDNO,
-          account: res.data.account,
-          applyTime: res.data.applyTime,
-          approvalStatus: res.data.approvalStatus,
-          listAttac: res.data.listAttac,
-          payType: res.data.payType,
-          applyType: res.data.payType,
-          applicationNO: res.data.applicationNO
-        })
+        console.log('详细信息：', res.data),
+          that.setData({
+            newList: res.data,
+            loadHidden: true,
+            name: res.data.name,
+            mobile: res.data.mobile,
+            account: res.data.account,
+            applyTime: res.data.applyTime,
+            approvalStatus: res.data.approvalStatus,
+            listAttac: res.data.listAttac,
+            payType: res.data.payType,
+            applyType: res.data.applyType,
+            applicationNO: res.data.applicationNO,
+            description: res.data.description
+          })
         that.data.pictures = []
-        for (var i = 0; i < that.data.listAttac.length;i++){
-          that.data.pictures.push("http://172.16.10.40:9001"+that.data.listAttac[i].FilePath)
+        if (that.data.listAttac!=null){
+          for (var i = 0; i < that.data.listAttac.length; i++) {
+            that.data.pictures.push("https://sp.mufax.cn/" + that.data.listAttac[i].FilePath)
+          }
         }
       }
     })
@@ -125,7 +125,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      orderId:options.id
+      orderId: options.id,
+      delBtnHidden: options.deleteBtnHidden
     })
     this.loadData()
   }

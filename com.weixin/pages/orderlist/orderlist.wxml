@@ -1,13 +1,13 @@
 <!--orderllist.wxml-->
 <view class="classname">
   <!-- 列表模板 开始-->
-  <template name="itmes"  bindtap="listClick">
+  <template name="itmes" bindtap="listClick">
      <navigator url="../../pages/orderdetail/orderdetail?id={{ID}}"  hover-class="navigator-hover">  
    <view class="list-item">
       <view class="item-left">
       <view class="orderid">订单编号：{{ApplicationNO}}</view>
       <view class="name">客户：   {{Name}}</view>
-       <view class="date">{{ApprovalTime}}</view>
+       <view class="date">{{CreateTime}}</view>
     </view>
     <view class="infos">
       <view class="money">￥{{Account}}</view>
@@ -23,23 +23,23 @@
   <view class="match-filter">
     <view class="{{btn1?'btn-t':'btn-f'}}" bindtap="seletebtn1">申请中
     </view>
-    <view class="{{btn2?'btn-t':'btn-f'}}" bindtap="seletebtn2">已驳回
+        <view class="{{btn3?'btn-t':'btn-f'}}" bindtap="seletebtn3">已成功
     </view>
-    <view class="{{btn3?'btn-t':'btn-f'}}" bindtap="seletebtn3">已成功
+        <view class="{{btn2?'btn-t':'btn-f'}}" bindtap="seletebtn2">已驳回
     </view>
   </view>
 
-  <view class="sl-list"  scroll-y="true" >
-   <!-- 循环输出列表 开始 -->
-  <view wx:for="{{newList}}" wx:key="id" class="list">
-    <template is="itmes" data="{{...item}}" />
-  </view>
-  <!-- 循环输出列表 结束 -->
+  <view class="sl-list" scroll-y="true">
+    <!-- 循环输出列表 开始 -->
+    <view wx:for="{{newList}}" wx:key="id" class="list">
+      <template is="itmes" data="{{...item}}" />
+    </view>
+    <!-- 循环输出列表 结束 -->
   </view>
 
   <loading hidden="{{loadHidden}}" bindchange="loadChange">
-加载中...
-</loading>
- 
+    加载中...
+  </loading>
+
 
 </view>

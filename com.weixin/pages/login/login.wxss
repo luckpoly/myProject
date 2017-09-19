@@ -16,3 +16,14 @@
 .btn-submit{
   margin: 20px 15px;
 }
+.section__title{
+  font-weight: bold;
+}
+.btn-submit-btn {
+  color: white;
+  background-color: #23bbff;
+}
+
+.button-hover {
+  background-color: #1e8eff;
+}

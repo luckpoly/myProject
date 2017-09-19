@@ -1,4 +1,4 @@
-// submit.js
+    // submit.js
 //获取应用实例
 var app = getApp()
 var util = require('../../utils/util.js');
@@ -26,8 +26,10 @@ Page({
     paytype: '1',
     ListAttachment: [
     ],
-    formData:'',
-    allValue: ''
+    formData: '',
+    allValue: '',
+    array: ['请选择', 'POS支付', '居间人转账', '金账户支付', '其它支付'],
+    area: '0',
   },
   /**
     * 生命周期函数--监听页面加载
@@ -36,6 +38,9 @@ Page({
     var that = this;
     if (!getApp().globalData.isregister) {//是否已经注册
       that.login();
+      that.setData({
+        loadHidden: false,
+      })
     } else {
       that.getUserInfo();
     }
@@ -47,11 +52,12 @@ Page({
     var that = this;
     if (value == "1") {
       that.setData({
-        showView: true
+        showView: true,
+        pictures: ['../../images/img/add.png']
       })
     } else {
       that.setData({
-        showView: false
+        pictures: ['../../images/img/add.png']
       })
     }
     that.setData({
@@ -60,23 +66,38 @@ Page({
   },
   //选择申请类型
   applicationType: function (e) {
-    this.setData({ applicationtype: e.detail.value });
+    this.setData({
+      applicationtype: e.detail.value
+    });
     console.log(this.data.applicationtype)
+  },
+  bindPickrChange: function (e) {
+    console.log('form发生了Pickr事件，携带数据为：', e.detail.value)
+    if (this.data.area != e.detail.value){
+      this.setData({
+        area: e.detail.value,
+        pictures: ['../../images/img/add.png']
+      });
+    }
   },
   //提交数据
   formSubmit: function (e) {
     var that = this
     this.data.formData = e.detail.value
     this.data.formData.ApplyType = this.data.applicationtype
-    this.data.formData.PayType = this.data.paytype
+    this.data.formData.PayType = this.data.area
     this.data.formData.SysUserID = app.globalData.SysUserID
-    if (this.data.formData.Name.length == 0 || this.data.formData.IDNO.length == 0 || this.data.formData.Account.length == 0) {
+    if (this.data.formData.Name.length == 0 || this.data.formData.Mobile.length == 0 || this.data.formData.Account.length == 0) {
       that.setData({ promat: "请完整填写提交信息!", confirmHidden: false })
       return false
     }
-    this.data.ListAttachment=[]
-    if (this.data.formData.PayType==1){
-      if (this.data.pictures.length == 1 && this.data.pictures[0] == '../../images/img/add.png'){
+    if (this.data.formData.PayType == 0) {
+      that.setData({ promat: "请选择支付方式!", confirmHidden: false })
+      return false
+    }
+    this.data.ListAttachment = []
+    if (this.data.formData.PayType == 1) {
+      if (this.data.pictures.length == 1 && this.data.pictures[0] == '../../images/img/add.png') {
         that.setData({ promat: "请选择要上传的图片!", confirmHidden: false })
         console.log('没有图片')
         return false
@@ -86,17 +107,26 @@ Page({
         url: app.url + 'Application/uploadImg',
         path: this.data.pictures//这里是选取的图片的地址数组
       })
-    }else{
-      this.data.formData.ListAttachment=[];
-      that.uploadData();
+    } else {
+      if (this.data.pictures.length == 1 && this.data.pictures[0] == '../../images/img/add.png') {
+        console.log('没有图片')
+        this.data.formData.ListAttachment = [];
+        that.uploadData();
+      } else {
+        that.myuploadimg({
+          // url: 'http://172.16.100.156:8011/api/Application/uploadImg',
+          url: app.url + 'Application/uploadImg',
+          path: this.data.pictures//这里是选取的图片的地址数组
+        })
+      }
     }
     this.setData({//显示加载中的提示
       loadingtext: "提交中...",
       loadHidden: false
     })
   },
-  uploadData: function (){
-    var that=this
+  uploadData: function () {
+    var that = this
     this.data.formData.ListAttachment = this.data.ListAttachment;
     wx.request({
       // url: 'http://172.16.100.156:8011/api/Application/AddApplication',
@@ -108,17 +138,22 @@ Page({
         console.log("-----", res.data)
         that.setData({ loadHidden: true })
         console.log(that.data.formData)
-        wx.showToast({
-          title: '提交成功',
-          icon: 'succes',
-          duration: 1500,
-          mask: true,
-        })
-        that.setData({
-          redata:'',
-          pictures: ['../../images/img/add.png'
-          ]
-        })
+        if (res.data.code == 'y') {
+          app.globalData.isRefresh = true
+          wx.showToast({
+            title: '提交成功',
+            icon: 'succes',
+            duration: 1500,
+            mask: true,
+          })
+          that.setData({
+            redata: '',
+            pictures: ['../../images/img/add.png'
+            ]
+          })
+        } else {
+          that.setData({ promat: res.data.errmsg + "请检查输入信息后重试!", confirmHidden: false })
+        }
       },
     })
   },
@@ -127,7 +162,7 @@ Page({
     var that = this
     wx.chooseImage({
       count: 9, // 默认9
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sizeType: [ 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album'], // , 'camera'可以指定来源是相册还是相机，默认相册
       success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
@@ -141,25 +176,33 @@ Page({
     })
   },
   //多张图片上传
-  myuploadimg: function (data){
-    var that= this,
-    i=data.i ? data.i : 0,
-    success=data.success ? data.success : 0,
-    fail=data.fail ? data.fail : 0;
+  myuploadimg: function (data) {
+    var that = this,
+      i = data.i ? data.i : 0,
+      success = data.success ? data.success : 0,
+      fail = data.fail ? data.fail : 0;
     wx.uploadFile({
       url: data.url,
       filePath: data.path[i],
       name: 'fileData',
       formData: null,
       success: (resp) => {
+        // if (resp.statusCode != 200) {
+        //   wx.showModal({
+        //     title: '提示',
+        //     content: '上传失败',
+        //     showCancel: false
+        //   })
+        //   return;
+        // }
         success++;
         console.log(resp)
         console.log(i);
-      
-//---------------------------
+
+        //---------------------------
         var datae = resp.data;
         console.log(datae)
-        var imgobj= str2json(datae)
+        var imgobj = str2json(datae)
         console.log(imgobj)
         //这里可能有BUG，失败也会执行这里
         var imgdata = { FileName: imgobj.name, FileType: 0, FilePath: imgobj.url }
@@ -174,9 +217,20 @@ Page({
         console.log(i);
         i++;
         if (i == data.path.length) {   //当图片传完时，停止调用   
-          var dataimg = that.data.ListAttachment; 
-          that.uploadData();
-          console.log('执行完毕' , dataimg);
+          var dataimg = that.data.ListAttachment;
+          if (dataimg.length != this.data.pictures.length){
+            wx.showModal({
+              title: '提示',
+              content: '上传失败',
+              showCancel: false
+            })
+            that.setData({
+              loadHidden:true
+            })
+          }else{
+            that.uploadData();
+          }
+          console.log('执行完毕', dataimg);
           console.log('成功：' + success + " 失败：" + fail);
         } else {//若图片还没有传完，则继续调用函数
           console.log(i);
@@ -185,7 +239,6 @@ Page({
           data.fail = fail;
           that.myuploadimg(data);
         }
-
       }
     });
   },
@@ -221,11 +274,21 @@ Page({
           header: { 'Content-type': 'application/json' },
           success: function (res) {
             wx.stopPullDownRefresh()//关闭下拉刷新
+            that.setData({
+              loadHidden: true,
+            })
             if (!res.data) {
               return false
             }
             console.log("-----", res.data)
             if (res.data.code == 'y') {
+              if (res.data.isActive == 0) {
+                //跳转
+                wx.redirectTo({
+                  url: '../login/login',
+                })
+                return false
+              }
               that.setData({
                 name: res.data.name,
                 depname: res.data.depname,
@@ -282,7 +345,7 @@ Page({
             url: '../login/login',
           })
         } else {
-      
+
           app.globalData.isregister = true;
           //请求个人信息 
           that.getUserInfo()
@@ -320,7 +383,6 @@ Page({
   onUnload: function () {
 
   },
-
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
@@ -352,7 +414,7 @@ function json2Form(json) {
   }
   return str.join("&");
 }
-function str2json(str){
+function str2json(str) {
   var obj = JSON.parse(str);
   return obj;
 }

@@ -26,8 +26,11 @@ App({
   globalData: {
     userInfo: null,
     isregister: false,
-    SysUserID:''
+    SysUserID: '',
+    isRefresh: false
   },
-  url: 'http://172.16.10.40:9001/api/',
-  testurl: 'http://www.zhaozengju.top/myweicms/index.php?s=/'
+  url: 'https://sp.mufax.cn/api/',
+  // url: 'http://172.16.10.40:9001/api/',
+  // url:'http://172.16.100.185:81/api/',//宇哥
+  // url:'http://172.16.100.156:8011/api/',//花花
 })

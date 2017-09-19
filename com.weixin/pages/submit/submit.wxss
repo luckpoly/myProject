@@ -105,3 +105,16 @@ radio{
 font-size: 10px;
 color:"#23bbff";
 }
+.paytype{
+  display: none
+}
+picker{
+  width: max-content;
+  margin-left: 20rpx;
+}
+.picker{
+  color: #23bbff;
+}
+.pt{
+  margin-bottom: 20rpx;
+}

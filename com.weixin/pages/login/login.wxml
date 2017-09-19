@@ -10,8 +10,9 @@
   </view>
 
    <view class="btn-submit">
-    <button formType="submit">提交</button>
+    <button class="btn-submit-btn" formType="submit">提交</button>
     <modal title="温馨提示" no-cancel hidden="{{confirmHidden}}" confirm-text="确定"  bindconfirm="modalChange">{{promat}}</modal>
   </view>
+   <loading hidden="{{loadHidden}}" bindchange="loadChange">提交中...</loading>
   
 </form>
