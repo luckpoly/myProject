@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/send_type_dialog_shape"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_dismiss_pack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:paddingRight="10dp"
+        android:paddingTop="7dp"
+        android:text="×"
+        android:textColor="@color/theme_color"
+        android:textSize="23sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:textColor="@color/theme_color"
+            android:text="@string/coupon_coupon_no"/>
+        <EditText
+            android:id="@+id/et_coupon_No"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_rl_style"
+            android:hint="@string/coupon_use_edt_hint"
+            android:paddingLeft="7dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="30dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_tijiao"
+            android:layout_width="85dp"
+            android:layout_height="35dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/btn_pack_choose"
+            android:gravity="center"
+            android:text="@string/coupon_submit"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:textSize="17sp" />
+    </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

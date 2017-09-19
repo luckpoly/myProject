@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/title_color"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    tools:context="com.brandsh.tiaoshi.activity.SearchActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/title_color">
+
+        <ImageView
+            android:id="@+id/search_ivBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:src="@mipmap/backlan"
+            android:scaleType="center"/>
+
+        <RelativeLayout
+            android:id="@+id/search_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rl_search">
+
+            <ImageView
+                android:id="@+id/search_ivSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/search2"/>
+
+            <EditText
+                android:id="@+id/search_et"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:ems="13"
+                android:textColor="#575757"
+                android:textSize="14sp"
+                android:hint="请输入想要搜索的商品"
+                android:singleLine="true"
+                android:layout_toRightOf="@+id/search_ivSearch"
+                android:layout_marginLeft="5dp"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/search_tvSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="搜索"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="#5fb336"
+            android:background="@drawable/tv_search"
+            android:layout_toRightOf="@+id/search_rl"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_youlike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#666666"
+        android:textSize="12sp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="5dp"
+        android:text="猜你喜欢"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/bg_hui"
+        android:layout_weight="10">
+
+        <com.brandsh.tiaoshi.widget.SelfPullToRefreshListView
+            android:id="@+id/search_ptrListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@android:color/transparent"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

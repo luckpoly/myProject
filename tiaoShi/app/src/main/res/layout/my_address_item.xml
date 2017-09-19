@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="86dp"
+    android:background="@drawable/list_item_color"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/my_address_item_ivLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:src="@mipmap/map_pin"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/my_address_item_ivLogo"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/my_address_item_tvContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="鲜鲜哥"
+                android:textColor="#242424"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="男士"
+                android:textColor="#242424"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/my_address_item_tvPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentRight="true"
+                android:text="12345678901"
+                android:textColor="#242424"
+                android:textSize="15sp" />
+            <LinearLayout
+                android:id="@+id/ll_set_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|right"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#242424"
+                    android:text="设置为默认地址"/>
+                <ImageView
+                    android:id="@+id/iv_set_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:src="@mipmap/default_adds_yes"/>
+            </LinearLayout>
+
+        </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp">
+            <TextView
+                android:id="@+id/tv_tag"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="@color/bg"
+                android:padding="1dp"
+                android:background="@drawable/btn_style2"
+                android:text="公司"/>
+            <TextView
+                android:id="@+id/my_address_item_tvAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="　　　上海市宝山区上海市宝山区上海市宝山区上海市宝山区上海市宝山区"
+                android:textColor="#c1c1c1"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    <ImageView
+        android:id="@+id/iv_go_bj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:src="@mipmap/adds_bj"
+        />
+</LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@mipmap/icon_go_right"
+        android:visibility="gone" />
+
+</RelativeLayout>

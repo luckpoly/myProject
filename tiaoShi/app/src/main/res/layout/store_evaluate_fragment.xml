@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_hui"
+    android:orientation="vertical">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/message_list_rlNoItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingBottom="50dp"
+        android:visibility="gone">
+        <ImageView
+            android:id="@+id/message_list_ivNoItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/noorder"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/message_list_ivNoItem"
+            android:layout_marginTop="20dp"
+            android:text="暂时还没有评论哟！"
+            android:textSize="17sp"
+            android:layout_centerHorizontal="true"/>
+
+
+    </RelativeLayout>
+    <com.brandsh.tiaoshi.widget.SelfPullToRefreshListView
+        android:id="@+id/store_evaluatePTRL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"/>
+</RelativeLayout>
+</LinearLayout>

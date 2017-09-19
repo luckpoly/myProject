@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#f1f1f1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#d6d6d6">
+
+        <TextView
+            android:id="@+id/shopping_trolley_tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="购物车"
+            android:textSize="17sp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"/>
+
+        <View
+            android:layout_width="70dp"
+            android:layout_height="4px"
+            android:background="#5fb336"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/hopping_trolley_tvClear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:layout_marginRight="30dp"
+            android:textSize="14sp"
+            android:text="清空购物车"/>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/shopping_trolley_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp">
+
+    </ListView>
+
+</LinearLayout>

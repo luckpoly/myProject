@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_dismiss_pack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:paddingRight="10dp"
+        android:paddingTop="7dp"
+        android:text="×"
+        android:textColor="@color/theme_color"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="提示"
+        android:layout_marginBottom="20dp"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView style="@style/lineStyle" />
+
+    <TextView
+        android:id="@+id/et_beizhu_content"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:padding="5dp"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:gravity="top"
+        android:background="@null"
+        android:text="请在当天21点前修改次日订单信息！" />
+
+    <TextView style="@style/lineStyle" />
+
+    <TextView
+        android:id="@+id/tv_addjuice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/btn_pack_choose"
+        android:gravity="center"
+        android:text="确定"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+</LinearLayout>

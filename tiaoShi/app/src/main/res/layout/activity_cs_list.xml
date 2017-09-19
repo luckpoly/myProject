@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/bg_hui"
+    android:layout_height="match_parent">
+    <include layout="@layout/title_bar_view"/>
+    <RelativeLayout
+        android:id="@+id/guanzhu_list_rlNoItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingBottom="50dp"
+        android:visibility="gone">
+        <ImageView
+            android:id="@+id/guanzhu_list_ivNoItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/favourate"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/guanzhu_list_ivNoItem"
+            android:layout_marginTop="20dp"
+            android:text="您附近暂时还没有入驻的超市哟！"
+            android:textSize="17sp"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.brandsh.tiaoshi.widget.SelfPullToRefreshListView
+            android:id="@+id/home_PTRListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@android:color/transparent"/>
+        <ImageView
+            android:id="@+id/iv_breaktop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/breaktop"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

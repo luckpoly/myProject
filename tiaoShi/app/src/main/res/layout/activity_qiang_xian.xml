@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/title_color"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    tools:context="com.brandsh.tiaoshi.activity.QiangXianActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@android:color/white">
+
+        <RelativeLayout
+            android:id="@+id/qiangxian_rlBack"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/backlan"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/activity_title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="活动"
+            android:layout_centerInParent="true"
+            android:textColor="@color/theme_color"
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/icon_location"
+                android:layout_gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/qiangxian_tvStoreCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/theme_color"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:textSize="17sp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView
+      style="@style/lineStyle"/>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="11">
+    <com.brandsh.tiaoshi.widget.SelfPullToRefreshListView
+        android:id="@+id/qiangxian_PTRListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"/>
+    <RelativeLayout
+        android:id="@+id/guanzhu_list_rlNoItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:paddingBottom="50dp"
+        android:background="@color/transparent"
+        android:visibility="visible">
+        <ImageView
+            android:id="@+id/guanzhu_list_ivNoItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/favourate"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/guanzhu_list_ivNoItem"
+            android:layout_marginTop="20dp"
+            android:text="暂时没有相关内容！"
+            android:textSize="17sp"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>
+
+</LinearLayout>

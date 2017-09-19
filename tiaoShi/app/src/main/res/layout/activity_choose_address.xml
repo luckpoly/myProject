@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/title_color"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    tools:context="com.brandsh.tiaoshi.activity.ChooseAddressActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/choose_address_ivBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:src="@mipmap/backlan"
+            android:scaleType="center"/>
+
+        <RelativeLayout
+            android:id="@+id/choose_address_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rl_search">
+
+            <ImageView
+                android:id="@+id/choose_address_ivSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/search2"/>
+
+            <EditText
+                android:id="@+id/choose_address_et"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:ems="13"
+                android:textColor="#575757"
+                android:textSize="14sp"
+                android:hint="请输入城区街道"
+                android:layout_toRightOf="@+id/choose_address_ivSearch"
+                android:layout_marginLeft="5dp"/>
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/choose_address_tvSure"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="确定"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="#5fb336"
+            android:background="@drawable/tv_search"
+            android:layout_toRightOf="@+id/choose_address_rl"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <TextView
+      style="@style/lineStyle" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10">
+
+        <ListView
+            android:id="@+id/choose_address_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/title_color"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@android:color/white">
+        <RelativeLayout
+            android:id="@+id/about_us_rlBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/backlan"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_newpople_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新用户专享"
+            android:layout_centerInParent="true"
+            android:textColor="@color/theme_color"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+    <TextView
+        style="@style/lineStyle"/>
+    <ImageView
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/category_nav_bg_normal"/>
+    <TextView
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.8"
+        android:layout_margin="10dp"
+        android:lineSpacingExtra="4dp"
+        android:text="上 海 挑 食 信 息 科 技 有 限 公 司 专 业 打 造 从 产 地 到 水 果 店直达水果供应一站式服务，在这里我们将联合数千家水果店给用户提供最新鲜的水果，在这里，我们为用户提供安全可靠的水果服务，在这里，我们为用户提供最经济最实惠的水果产品；现在立即注册，将享受平台提供的大礼包。"/>
+<WebView
+    android:id="@+id/wv_newpeople_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+</WebView>
+
+</LinearLayout>

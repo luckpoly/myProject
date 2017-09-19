@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/title_color"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    tools:context="com.brandsh.tiaoshi.activity.CategoryItemDetailListActivity">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/category_detail_ivBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:src="@mipmap/backlan"
+            android:scaleType="center"/>
+
+        <TextView
+            android:id="@+id/category_detail_tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#5fb336"
+            android:text="全部鲜果－葡萄"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:background="#cacaca"
+        android:layout_height="1dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:padding="1dp"
+        android:orientation="vertical"
+        android:layout_height="35dp">
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/category_rg"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/categorydata_rb1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:background="@drawable/categorydata_nav_bg_left"
+            android:textColor="@drawable/categorydata_nav_text"
+            android:text="热卖"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/categorydata_rb2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:gravity="center"
+            android:background="@drawable/categorydata_nav_bg"
+            android:textColor="@drawable/categorydata_nav_text"
+            android:text="新品"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/categorydata_rb3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:gravity="center"
+            android:background="@drawable/categorydata_nav_bg_right"
+            android:textColor="@drawable/categorydata_nav_text"
+            android:text="促销"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
+    </RadioGroup>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/guanzhu_list_rlNoItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingBottom="50dp"
+        android:visibility="gone">
+
+
+        <ImageView
+            android:id="@+id/guanzhu_list_ivNoItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/favourate"
+            android:layout_centerHorizontal="true"
+           />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/guanzhu_list_ivNoItem"
+            android:layout_marginTop="20dp"
+            android:text="暂时没有更多的商品！"
+            android:textSize="17sp"
+            android:layout_centerHorizontal="true"/>
+
+
+    </RelativeLayout>
+    <com.brandsh.tiaoshi.widget.SelfPullToRefreshListView
+        android:id="@+id/category_detail_ptrListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:cacheColorHint="@android:color/transparent"/>
+
+</LinearLayout>

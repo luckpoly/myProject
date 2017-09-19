@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/title_color"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    tools:context="com.brandsh.tiaoshi.activity.GuanZhuListActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/guanzhu_list_ivBack"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@mipmap/backlan"
+            android:scaleType="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的关注"
+            android:textSize="18sp"
+            android:textColor="@color/theme_color"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+    <TextView
+       style="@style/lineStyle" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/bg_hui"
+        android:layout_weight="11">
+
+        <RelativeLayout
+            android:id="@+id/guanzhu_list_rlNoItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingBottom="50dp"
+            android:visibility="visible">
+
+
+                <ImageView
+                    android:id="@+id/guanzhu_list_ivNoItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/favourate"
+                    android:layout_centerHorizontal="true"
+                   />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/guanzhu_list_ivNoItem"
+                    android:layout_marginTop="20dp"
+                    android:text="还没有关注的店铺,速速去关注～"
+                    android:textSize="17sp"
+                    android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+        <com.brandsh.tiaoshi.widget.SelfPullToRefreshListView
+            android:id="@+id/guanzhu_list_ptrListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@android:color/transparent"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

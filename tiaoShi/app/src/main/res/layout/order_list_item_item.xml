@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
+
+    <TextView
+        android:id="@+id/order_list_item_item_tvName"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:text="美国苹果"
+        android:textColor="#575757"
+        android:singleLine="true"
+        android:ellipsize="end" />
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/order_list_item_item_tvCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:text="x 10/"
+
+        android:singleLine="true"
+        android:gravity="center"
+        android:ellipsize="end" />
+    <TextView
+        android:id="@+id/tv_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="9sp" />
+</LinearLayout>
+    <TextView
+        android:id="@+id/order_list_item_item_tvCash"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:text="￥ 100"
+        android:textColor="#575757"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:gravity="right"/>
+
+</LinearLayout>

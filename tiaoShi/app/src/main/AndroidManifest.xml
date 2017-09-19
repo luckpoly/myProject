@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.brandsh.tiaoshi">
+
+    <!-- Required 自定义用来收发消息的相关权限 -->
+    <permission
+        android:name="${applicationId}.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-sdk android:minSdkVersion="4"></uses-sdk>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="ANDROID.PERMISSION.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="${applicationId}.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+    <application
+        android:name=".application.TiaoshiApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logoicon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.StartActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/StartTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="tiaoshi"/>
+            </intent-filter>
+        </activity>
+        <!-- 极光推送 -->
+        <!-- Required SDK核心功能-->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </activity>
+
+        <!-- Required SDK核心功能-->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false"></service>
+
+        <!-- Required SDK 核心功能-->
+        <!-- option since 2.0.5 可配置PushService，DaemonService,PushReceiver,AlarmReceiver的android:process参数 将JPush相关组件设置为一个独立进程 -->
+        <!-- 如：android:process=":remote" -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+
+            </intent-filter>
+        </service>
+
+        <!-- Required SDK 核心功能 since 1.8.0 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </service>
+
+        <!-- Required SDK核心功能-->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> <!--Required 显示通知栏 -->
+                <category android:name="${applicationId}" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <!-- User defined. For test only 用户自定义的广播接收器-->
+        -
+        <receiver
+            android:name="com.brandsh.tiaoshi.activity.MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            -
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!--Required 用户注册SDK的intent-->
+                <action android:name="cn.jpush.android.intent.UNREGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!--Required 用户接收SDK消息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!--Required 用户接收SDK通知栏信息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!--Required 用户打开自定义通知栏的intent-->
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK" />
+                <!--Optional 用户接受Rich Push Javascript 回调函数的intent-->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="com.brandsh.tiaoshi" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK核心功能-->
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
+        <!-- Required . Enable it you can get statistics data with channel -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="2b6ab4f896fa4393e18c29e5" /> <!-- </>值来自开发者平台取得的AppKey-->
+        <!-- 友盟-->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5718357467e58ed11e0032ea"></meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Anzhuoshichang" />
+
+        <!-- 高德地图 -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="c66e56f7524e0f3252a014193a12cf92" />
+
+        <service android:name="com.amap.api.location.APSService" />
+        <service android:name="com.brandsh.tiaoshi.versionUpdate.DownLoadService"/>
+        <!--qq登录-->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:noHistory="true"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="1105155505" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.tencent.connect.common.AssistActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            />
+        <!--注册微信回调 WXEntryActivity -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <activity
+            android:name=".activity.FCActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.GuideActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+
+        </activity>
+        <activity
+            android:name=".activity.StoreDetailActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            />
+
+        <!-- 支付宝 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name=".activity.QiangXianActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AboutUsSMActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" />
+        <activity
+            android:name=".activity.ChangeNickNameActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.StoreAddressMapActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.CategoryItemDetailListActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.GuanZhuListActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.MyMessageActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.MessageDetailActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.MyDeliveryAddressActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.AddDeliveryAddressActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.UserAgreementActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.SearchActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.OrderDetailsActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.BannerDetailActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.ChooseAddressActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.DiscountActivaty"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.OrderListActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.ConfirmOrderActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.ChooseDeliveryAddressActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.AddEvaluationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.EvaluateDetailActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.EditDeliveryAddresActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PayOrderActivity"
+            android:screenOrientation="portrait">
+            <data android:scheme="wx1705d06974c1200e" />
+        </activity>
+        <activity
+            android:name=".activity.NewPeopleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.JuiceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ShowImageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.JuiceOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FenxiangActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BianjiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.JuiceOrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.JuiceMonthActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.JuiceMonthDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MonthOrderListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MonthOrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MonthFenOrderListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CardPackageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SimpleCaptureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UseCouponActivaty"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.StoreDetailCSActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BalanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.TopUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChooseAddressMapActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LocationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AboutUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FeedbackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.StoreListCSActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PhoneGHActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BondPhoneActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

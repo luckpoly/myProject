@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:orientation="horizontal"
+    android:paddingBottom="5dp">
+
+    <TextView
+        android:id="@+id/shop_cart_item1_tvName"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textSize="15sp"
+        android:text="骨肉相连"/>
+
+    <TextView
+        android:id="@+id/shop_cart_item1_tvCount"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:text="x 5"
+        android:layout_toLeftOf="@+id/shop_cart_item1_tvCash"
+        android:layout_marginRight="20dp"/>
+
+    <TextView
+        android:id="@+id/shop_cart_item1_tvCash"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="15sp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:text="￥16.000000元"
+        android:layout_alignParentRight="true"
+        android:gravity="right" />
+
+</LinearLayout>

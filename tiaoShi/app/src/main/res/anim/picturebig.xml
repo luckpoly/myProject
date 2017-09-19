@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shareInterpolator="false">
+    <scale
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        android:fromXScale="1.0"
+        android:toXScale="0.7"
+        android:fromYScale="1.0"
+        android:toYScale="0.7"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:duration="500"
+        android:repeatCount="1"
+        android:repeatMode="reverse"
+       />
+    <!--android:interpolator：动画的插入器，用于描述动画的运行情况，常用的有accelerate_decelerate_interpolator（先加速后减速），accelerate_interpolator（加速器）等-->
+    <!--android:fromXScale：X轴开始动画缩放的比例-->
+    <!--android:toXScale：X轴结束时动画缩放的比例-->
+    <!--android:fromYScale：Y轴开始动画缩放的比例-->
+    <!--android:toYScale:Y轴结束动画缩放的比例，以上四个属性定义了将图片从0.3的比例大小放大到1.0的比例大小（即原大小）-->
+    <!--android:pivotX：固定点X轴坐标-->
+    <!--android:pivotY：固定点Y轴坐标-->
+    <!--android:duration：动画持续时间，5000表示5000毫秒，即5秒-->
+    <!--android:repeatCount：动画重复次数，-1表示无限循环重复-->
+    <!--Android:repeatMode：重复模式，reverse表示反向进行，在这里先放大，后缩小-->
+    <!--<alpha-->
+        <!--android:fromAlpha="0.0"-->
+        <!--android:toAlpha="1.0"-->
+        <!--android:duration="500"-->
+        <!--/>-->
+</set>

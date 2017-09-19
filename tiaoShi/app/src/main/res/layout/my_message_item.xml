@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.brandsh.tiaoshi.widget.MySwipeView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:id="@+id/msg_item_swipeView"
+    android:background="@drawable/list_item_color">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+
+        <ImageView
+            android:id="@+id/msg_item_ivStatus"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/notice"
+            android:layout_marginLeft="12dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/msg_item_ivStatus"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/msg_item_tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#343434"
+                    android:text="接单提醒"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/msg_item_tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#999999"
+                    android:text="2016/2/16 09:12:34"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"/>
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/msg_item_tvContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textSize="14sp"
+                android:textColor="#575757"
+                android:text="41231244343678927893248123893748957234985732984057"
+                android:ellipsize="end"
+                android:singleLine="true"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_go_right"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/msg_item_tvDelete"
+        android:layout_width="100dp"
+        android:layout_height="90dp"
+        android:text="删  除"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:background="#f00"/>
+
+</com.brandsh.tiaoshi.widget.MySwipeView>

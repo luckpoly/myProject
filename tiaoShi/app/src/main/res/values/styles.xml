@@ -1,0 +1,117 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:screenOrientation">portrait</item>
+    </style>
+    <style name="AppTheme1" parent="Theme.AppCompat.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:screenOrientation">portrait</item>
+    </style>
+    <style name="StartTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowBackground">@mipmap/start_icon</item>
+        <item name="android:screenOrientation">portrait</item>
+    </style>
+
+    <!-- 加载框主题 -->
+    <style name="ProgressHUD" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+    <!-- 去评价星星 -->
+    <style name="EvaluateRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/evaluate_rating_bar</item>
+        <item name="android:minHeight">25dp</item>
+        <item name="android:maxHeight">25dp</item>
+    </style>
+    <style name="NavPage">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+        <!-- <item name="android:background">@drawable/nav_page</item> -->
+        <item name="android:background">@color/navpage</item>
+    </style>
+    <style name="TitleText">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+
+    <!-- 评价列表星星 -->
+    <style name="EvaluateListRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/evaluate_list_rating_bar</item>
+        <item name="android:minHeight">17dp</item>
+        <item name="android:maxHeight">17dp</item>
+        <item name="android:isIndicator">true</item>
+    </style>
+
+    <style name="AnimBottom">
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <!-- 指定显示的动画xml -->
+        <item name="android:windowExitAnimation">@anim/pophidden_anim</item>
+        <!-- 指定消失的动画xml -->
+
+    </style>
+    <!-- layout悬浮 -->
+    <style name="layout" >
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <!-- 极光推送 -->
+    <style name="MyDialogStyle">
+
+    <item name="android:windowBackground">@android:color/transparent</item>
+
+    <item name="android:windowFrame">@null</item>
+
+    <item name="android:windowNoTitle">true</item>
+
+    <item name="android:windowIsFloating">true</item>
+
+    <item name="android:windowIsTranslucent">true</item>
+
+    <item name="android:windowContentOverlay">@null</item>
+
+    <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+
+    <item name="android:backgroundDimEnabled">true</item>
+
+</style>
+    <style name="BarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:layout_height">20dp</item>
+    </style>
+    <style name="lineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">#cacaca</item>
+        <item name="android:layout_height">0.5dp</item>
+    </style>
+    <style name="lineStyleIn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/line</item>
+        <item name="android:layout_height">1px</item>
+    </style>
+    <style name="add_dialog">
+        <item name="android:windowFrame">@null</item><!-- 边框 -->
+        <item name="android:windowIsFloating">true</item><!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item><!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item><!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item><!-- 自己想要的背景 -->
+    </style>
+
+</resources>

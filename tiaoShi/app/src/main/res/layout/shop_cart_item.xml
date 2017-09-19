@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp">
+
+    <TextView
+        android:id="@+id/shop_cart_item_tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textSize="13sp"
+        android:maxEms="12"
+        android:text="骨肉相连"/>
+    <Button
+        android:id="@+id/bt_add"
+        android:layout_alignParentRight="true"
+        android:layout_width="30dp"
+        android:layout_centerVertical="true"
+        android:layout_height="30dp"
+        android:background="@mipmap/icon_btn_add"/>
+    <TextView
+        android:id="@+id/shop_cart_item_tvCount"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="5"
+        android:layout_toLeftOf="@+id/bt_add" />
+    <Button
+        android:id="@+id/bt_minus"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/shop_cart_item_tvCount"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@mipmap/icon_btn_minus"/>
+
+    <TextView
+        android:id="@+id/shop_cart_item_tvCash"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="12sp"
+        android:textColor="#fb3200"
+        android:text="￥16.000000元"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:layout_toLeftOf="@+id/shop_cart_item_tvCount"
+        android:layout_marginRight="30dp"/>
+
+</RelativeLayout>

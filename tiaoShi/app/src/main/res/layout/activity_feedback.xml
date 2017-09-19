@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/bg_hui"
+    android:layout_height="match_parent">
+    <include layout="@layout/title_bar_view"/>
+    <EditText
+        android:id="@+id/et_addevaluation"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/bg"
+        android:layout_margin="10dp"
+        android:gravity="start"
+        android:hint="请输入遇到的问题或建议"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
+        android:textColor="#575757"
+        android:textColorHint="#a0a0a0"
+        android:textSize="14sp"
+        android:padding="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#dedede" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+        <com.brandsh.tiaoshi.widget.UploadImgGridView
+            android:id="@+id/gv_add_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numColumns="5"
+            android:overScrollMode="never"
+            android:layout_marginTop="10dp"/>
+        <ImageView
+            android:id="@+id/iv_add_img"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@mipmap/icon_add_img"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_add_evaluation"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rl_add_evaluation"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="提交"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

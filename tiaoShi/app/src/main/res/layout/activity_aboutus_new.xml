@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/bg_hui"
+    android:layout_height="match_parent">
+    <include layout="@layout/title_bar_view"/>
+<ImageView
+    android:layout_width="0dp"
+    android:layout_height="74dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="10dp"
+    android:src="@mipmap/logo"/>
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="25dp"
+        android:text="V2.3.9"/>
+    <RelativeLayout
+        android:id="@+id/ll_to_update"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/list_item_color"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:visibility="visible">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawablePadding="10dp"
+            android:textColor="#242424"
+            android:textSize="15sp"
+            android:gravity="center_vertical"
+            android:text="版本更新" />
+        <TextView
+            android:id="@+id/tv_new_versin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:textColor="#c1c1c1"
+            android:text=""/>
+        <TextView
+            android:id="@+id/tv_tag_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="3dp"
+            android:layout_toLeftOf="@+id/tv_new_versin"
+            android:textSize="8sp"
+            android:visibility="gone"
+            android:background="@drawable/btn_style3"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textColor="@color/bg"
+            android:text="NEW"
+         />
+    </RelativeLayout>
+    <TextView
+       style="@style/lineStyleIn" />
+    <RelativeLayout
+        android:id="@+id/ll_to_sm"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/list_item_color"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:visibility="visible">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:textColor="#242424"
+            android:textSize="15sp"
+            android:text="关于挑食" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_go_right" />
+    </RelativeLayout>
+    <TextView
+        style="@style/lineStyleIn" />
+    <RelativeLayout
+        android:id="@+id/ll_to_fk"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/list_item_color"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:visibility="visible">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:textColor="#242424"
+            android:textSize="15sp"
+            android:text="反馈" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_go_right" />
+    </RelativeLayout>
+    <TextView
+        style="@style/lineStyleIn" />
+
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/title_color"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    tools:context="com.brandsh.tiaoshi.activity.MyMessageActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/my_message_ivBack"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@mipmap/backlan"
+            android:scaleType="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="我的消息"
+            android:textColor="@color/theme_color"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <TextView
+        style="@style/lineStyle"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/bg_hui"
+        android:layout_weight="11">
+
+        <RelativeLayout
+            android:id="@+id/message_list_rlNoItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingBottom="50dp"
+            android:visibility="gone">
+            <ImageView
+                android:id="@+id/message_list_ivNoItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/nomessage"
+                android:layout_centerHorizontal="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/message_list_ivNoItem"
+                android:layout_marginTop="20dp"
+                android:text="您还没有消息～"
+                android:textSize="17sp"
+                android:layout_centerHorizontal="true"/>
+
+
+        </RelativeLayout>
+
+        <com.brandsh.tiaoshi.widget.SelfPullToRefreshListView
+            android:id="@+id/my_message_ptrListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:cacheColorHint="@android:color/transparent"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

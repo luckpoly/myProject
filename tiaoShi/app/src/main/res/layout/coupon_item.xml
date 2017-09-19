@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:layout_height="110dp">
+
+    <LinearLayout
+        android:id="@+id/ll_coupon_bg"
+        android:background="@mipmap/coupon_bg"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+       <ImageView
+           android:id="@+id/iv_coupon_icon"
+           android:layout_width="55dp"
+           android:layout_height="55dp"
+           android:layout_marginRight="7dp"
+           android:layout_gravity="center_vertical"
+           android:layout_marginLeft="15dp"
+           />
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp">
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="优惠卷"
+                    android:textSize="15dp"
+                    android:textColor="#7d7d7d"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="10dp"
+                    />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="0dp">
+                <TextView
+                    android:id="@+id/tv_condition_price"
+                    android:textSize="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="·  满15元可使用"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#7d7d7d"
+                    />
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:textSize="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="·  使用期限 2016.5.24—2016.6.24"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#7d7d7d"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/rl_money"
+                android:layout_width="100dp"
+                android:layout_alignParentRight="true"
+                android:paddingBottom="45dp"
+                android:gravity="bottom"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_discount_price"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="14dp"
+                    android:text="5.0"
+                    android:textSize="40dp"
+                    android:textColor="#f29b02"
+                    android:gravity="bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tv_rmb" />
+                <TextView
+                    android:id="@+id/tv_rmb"
+                    android:layout_toLeftOf="@+id/tv_discount_price"
+                    android:text="￥"
+                    android:textSize="20dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#f29b02"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <ImageView
+                android:id="@+id/iv_yiguoqi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/rl_money"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:src="@mipmap/expired"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

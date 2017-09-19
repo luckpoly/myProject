@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/list_item_color"
+    android:layout_height="130dp">
+
+    <RelativeLayout
+        android:id="@+id/search_item_rl"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/relativelayout_style2">
+
+        <ImageView
+            android:id="@+id/search_item_iv"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/search_item_rl"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/search_item_tvGoodsName"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:textColor="#343434"
+            android:textSize="15sp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:text="鲜果超级大礼包哈哈哈"/>
+
+        <LinearLayout
+            android:id="@+id/search_item_llTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:id="@+id/search_item_ivGift"
+                android:layout_width="30dp"
+                android:layout_height="16dp"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/search_ivChaoZhi"
+                android:layout_width="30dp"
+                android:layout_height="16dp"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="5dp" />
+
+            <ImageView
+                android:id="@+id/search_ivChaoZhi2"
+                android:layout_width="30dp"
+                android:layout_height="16dp"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="5dp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/search_item_tvShopName"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="多多鲜果 陆家嘴店"
+            android:textSize="12sp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="#575757"/>
+
+        <TextView
+            android:id="@+id/search_item_tvMoney1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="满120元,免费配送"
+            android:textColor="#575757"
+            android:textSize="12sp"
+            android:layout_marginTop="5dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/search_item_tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥16"
+                android:textColor="#fb3200"
+                android:textSize="14sp"
+                android:layout_gravity="bottom"/>
+
+            <TextView
+                android:id="@+id/search_item_tvUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="元/斤"
+                android:textColor="#343434"
+                android:textSize="10sp"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="bottom"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="bottom">
+
+                <View
+                    android:id="@+id/search_item_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1px"
+                    android:background="#343434"
+                    android:layout_centerInParent="true"
+                    android:layout_alignLeft="@+id/search_item_tvOldPrice"
+                    android:layout_alignRight="@+id/search_item_tvOldPrice"/>
+
+                <TextView
+                    android:id="@+id/search_item_tvOldPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥32"
+                    android:textColor="#343434"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/search_tvDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/search_item_rl"
+        android:layout_marginRight="10dp"
+        android:text="330m"
+        android:textSize="12sp"
+        android:textColor="#575757"/>
+
+    <TextView
+        android:id="@+id/search_item_tvMoney2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:textSize="12sp"
+        android:textColor="#575757"
+        android:text="满120元,免配送费"/>
+
+    <TextView
+        android:id="@+id/search_item_tvCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/search_item_rl"
+        android:layout_marginRight="10dp"
+        android:text="销量:45129"
+        android:textColor="#575757"
+        android:textSize="12sp"/>
+
+</RelativeLayout>

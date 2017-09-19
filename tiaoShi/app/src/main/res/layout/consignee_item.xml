@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@drawable/list_item_color"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/consignee_iv"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="80dp"
+        android:scaleType="center"
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/icon_map_location" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="6"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/consignee_iv"
+        android:orientation="vertical"
+        android:layout_marginRight="20dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="标题" />
+
+            <TextView
+                android:id="@+id/consignee_tvTel"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:text="12345678901"/>
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/tv_name_and_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="详情"
+            android:textSize="13sp"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_go_right"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center_vertical"/>
+
+
+</LinearLayout>

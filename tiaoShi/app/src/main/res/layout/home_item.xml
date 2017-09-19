@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/list_item_color">
+    <TextView
+        android:id="@+id/tv_istitle"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="超出配送范围的商铺:"
+        android:paddingLeft="10dp"
+        android:visibility="gone"
+       android:gravity="center_vertical"
+        android:background="#f0f0f0"/>
+    <RelativeLayout
+        android:id="@+id/rl_item"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+       >
+    <RelativeLayout
+        android:id="@+id/home_item_rl"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/relativelayout_style2"
+        >
+        <ImageView
+            android:id="@+id/home_item_iv"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop" />
+        <ImageView
+            android:id="@+id/iv_recommend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/recommend"
+            android:scaleType="centerCrop" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/home_item_bd"
+        android:layout_width="88dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:id="@+id/home_item_tvNotice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/tv_number_notice"
+            android:gravity="center"
+            android:paddingBottom="2dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="2dp"
+            android:text="10"
+            android:textColor="#fff"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/home_item_rl"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout2">
+
+            <TextView
+                android:id="@+id/home_item_tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Miss Wang的水果铺"
+                android:textColor="#575757"
+                android:textSize="16sp"
+                android:layout_marginTop="3dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/home_item_ivStar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/rating_bar_list_normal" />
+
+            <ImageView
+                android:id="@+id/home_item_ivStar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/rating_bar_list_normal" />
+
+            <ImageView
+                android:id="@+id/home_item_ivStar3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/rating_bar_list_normal" />
+
+            <ImageView
+                android:id="@+id/home_item_ivStar4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/rating_bar_list_normal" />
+
+            <ImageView
+                android:id="@+id/home_item_ivStar5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/rating_bar_list_normal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_marginLeft="20dp"
+                android:text="4.0"
+                android:id="@+id/tv_ratingNo" />
+            <TextView
+                android:id="@+id/tv_salesvolume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textColor="#585858"
+                android:textSize="12sp"
+                android:text="月售904单"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/home_item_tvNumber0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:layout_marginTop="3dp"
+            android:text="超出配送范围"
+            android:textColor="@color/bg"
+            android:background="@drawable/home_item_out"
+
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/home_item_tvNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="有十种水果供你选择"
+            android:textColor="#5fb336"
+            android:textSize="12sp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:scaleType="center"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:src="@mipmap/mayixian"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:scaleType="center"
+                android:src="@mipmap/song"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:id="@+id/home_item_tvMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="满120元，免配送费"
+                android:textColor="#575757"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <LinearLayout
+        android:id="@+id/home_item_llminus"
+        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:scaleType="center"
+            android:src="@mipmap/jian"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/home_item_tvCoupon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="满100元，立减10元"
+            android:textColor="#575757"
+            android:textSize="12sp" />
+    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/home_item_ispay"
+            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:scaleType="center"
+                android:src="@mipmap/yue_jie"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="支持余额结算"
+                android:textColor="#575757"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/home_item_tvDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.5km"
+        android:textColor="#575757"
+        android:textSize="12sp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+    <ImageView
+        android:id="@+id/home_item_ivRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:src="@mipmap/icon_go_right" />
+
+</RelativeLayout>
+</LinearLayout>
